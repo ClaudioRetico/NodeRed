@@ -1,0 +1,334 @@
+[
+    {
+        "id": "a3316d81.0930d",
+        "type": "tab",
+        "label": "Random Game",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4fff2c4b.d90134",
+        "type": "ui_form",
+        "z": "a3316d81.0930d",
+        "name": "",
+        "label": "The Random Game",
+        "group": "cce8f9.b1ccf708",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "La tua scelta (numero da 0 a 10)",
+                "value": "yourInput",
+                "type": "number",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "yourInput": ""
+        },
+        "payload": "",
+        "submit": "Prova",
+        "cancel": "Cancella Input",
+        "topic": "",
+        "x": 184,
+        "y": 84,
+        "wires": [
+            [
+                "ff0f9443.311798",
+                "8fe5ae86.2766f",
+                "fe8346c7.932238"
+            ]
+        ]
+    },
+    {
+        "id": "8fe5ae86.2766f",
+        "type": "debug",
+        "z": "a3316d81.0930d",
+        "name": "InputImmesso",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 414,
+        "y": 34,
+        "wires": []
+    },
+    {
+        "id": "ef4d955e.70d968",
+        "type": "ui_toast",
+        "z": "a3316d81.0930d",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "Errore:  deve essere fra 0 e 10",
+        "name": "MsgError",
+        "x": 608,
+        "y": 263,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff0f9443.311798",
+        "type": "switch",
+        "z": "a3316d81.0930d",
+        "name": "Verifica Input",
+        "property": "payload.yourInput",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "0",
+                "vt": "num",
+                "v2": "10",
+                "v2t": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 492,
+        "y": 187,
+        "wires": [
+            [
+                "23c5a3a5.dc46ac",
+                "25536cec.bd17c4"
+            ],
+            [
+                "ef4d955e.70d968"
+            ]
+        ]
+    },
+    {
+        "id": "23c5a3a5.dc46ac",
+        "type": "debug",
+        "z": "a3316d81.0930d",
+        "name": "Inputverificato",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "x": 681,
+        "y": 88,
+        "wires": []
+    },
+    {
+        "id": "fe8346c7.932238",
+        "type": "random",
+        "z": "a3316d81.0930d",
+        "name": "RandomGenerator",
+        "low": "1",
+        "high": "10",
+        "inte": "true",
+        "property": "payload",
+        "x": 443.5,
+        "y": 364,
+        "wires": [
+            [
+                "911cf574.7c2268",
+                "faeba4e9.4726c8"
+            ]
+        ]
+    },
+    {
+        "id": "911cf574.7c2268",
+        "type": "debug",
+        "z": "a3316d81.0930d",
+        "name": "Random",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 589,
+        "y": 466,
+        "wires": []
+    },
+    {
+        "id": "faeba4e9.4726c8",
+        "type": "function",
+        "z": "a3316d81.0930d",
+        "name": "StoreRandom",
+        "func": "// flow.set(\"RndNum\",5);\nflow.set(\"RndNum\",msg.payload);",
+        "outputs": 0,
+        "noerr": 0,
+        "x": 725,
+        "y": 364,
+        "wires": []
+    },
+    {
+        "id": "25536cec.bd17c4",
+        "type": "switch",
+        "z": "a3316d81.0930d",
+        "name": "",
+        "property": "payload.yourInput",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "RndNum",
+                "vt": "flow"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 680,
+        "y": 188,
+        "wires": [
+            [
+                "c7643025.74cbe"
+            ],
+            [
+                "52ec407a.ce559"
+            ]
+        ]
+    },
+    {
+        "id": "fadb0b7a.144b08",
+        "type": "ui_audio",
+        "z": "a3316d81.0930d",
+        "name": "Dice Esatto",
+        "group": "cce8f9.b1ccf708",
+        "voice": "it-IT",
+        "always": "",
+        "x": 1071,
+        "y": 134,
+        "wires": []
+    },
+    {
+        "id": "c7643025.74cbe",
+        "type": "trigger",
+        "z": "a3316d81.0930d",
+        "op1": "Esatto",
+        "op2": "",
+        "op1type": "str",
+        "op2type": "nul",
+        "duration": "1",
+        "extend": false,
+        "units": "s",
+        "reset": "1",
+        "bytopic": "all",
+        "name": "StringaEsatto",
+        "x": 862,
+        "y": 161,
+        "wires": [
+            [
+                "fadb0b7a.144b08"
+            ]
+        ]
+    },
+    {
+        "id": "52ec407a.ce559",
+        "type": "trigger",
+        "z": "a3316d81.0930d",
+        "op1": "Sbagliato",
+        "op2": "",
+        "op1type": "str",
+        "op2type": "nul",
+        "duration": "1",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "Sbagliato",
+        "x": 877,
+        "y": 227,
+        "wires": [
+            [
+                "b17cac2d.d3003",
+                "cae07c46.3ebb1"
+            ]
+        ]
+    },
+    {
+        "id": "b17cac2d.d3003",
+        "type": "ui_audio",
+        "z": "a3316d81.0930d",
+        "name": "Dice Sbaglato",
+        "group": "cce8f9.b1ccf708",
+        "voice": "it-IT",
+        "always": "",
+        "x": 1087,
+        "y": 210,
+        "wires": []
+    },
+    {
+        "id": "703de945.7cfbf8",
+        "type": "ui_toast",
+        "z": "a3316d81.0930d",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "Risposta esatta",
+        "name": "Risposta",
+        "x": 1173,
+        "y": 272,
+        "wires": []
+    },
+    {
+        "id": "cae07c46.3ebb1",
+        "type": "function",
+        "z": "a3316d81.0930d",
+        "name": "RispEsatta",
+        "func": "msg.payload = (flow.get(\"RndNum\")).toString();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 989,
+        "y": 292,
+        "wires": [
+            [
+                "703de945.7cfbf8",
+                "9727dd2d.73f06"
+            ]
+        ]
+    },
+    {
+        "id": "9727dd2d.73f06",
+        "type": "debug",
+        "z": "a3316d81.0930d",
+        "name": "RispEsatta",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1174,
+        "y": 329,
+        "wires": []
+    },
+    {
+        "id": "cce8f9.b1ccf708",
+        "type": "ui_group",
+        "z": "",
+        "name": "Start",
+        "tab": "670e1c0e.58a714",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "670e1c0e.58a714",
+        "type": "ui_tab",
+        "z": "",
+        "name": "The Random Game (Esercizio 1)",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
