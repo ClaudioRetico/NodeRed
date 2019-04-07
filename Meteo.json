@@ -1,0 +1,571 @@
+[
+    {
+        "id": "393f3a42.2de4e6",
+        "type": "tab",
+        "label": "Meteo (Esercizio 2)",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b2b0ea29.4fb0a8",
+        "type": "debug",
+        "z": "393f3a42.2de4e6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 398,
+        "y": 75,
+        "wires": []
+    },
+    {
+        "id": "e24ee86b.d2a248",
+        "type": "change",
+        "z": "393f3a42.2de4e6",
+        "name": "Rimappa",
+        "rules": [
+            {
+                "t": "set",
+                "p": "location.country",
+                "pt": "msg",
+                "to": "payload.country",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "location.city",
+                "pt": "msg",
+                "to": "payload.city",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.country",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.city",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 401.9998779296875,
+        "y": 153.99999046325684,
+        "wires": [
+            [
+                "aba5e07e.46c0a",
+                "44643926.b32558"
+            ]
+        ]
+    },
+    {
+        "id": "aba5e07e.46c0a",
+        "type": "debug",
+        "z": "393f3a42.2de4e6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 590.0000228881836,
+        "y": 53.00000190734863,
+        "wires": []
+    },
+    {
+        "id": "5661be29.19465",
+        "type": "debug",
+        "z": "393f3a42.2de4e6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 927.9999923706055,
+        "y": 104.99999809265137,
+        "wires": []
+    },
+    {
+        "id": "aa6b817f.ece4f",
+        "type": "change",
+        "z": "393f3a42.2de4e6",
+        "name": "Descrizione",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.description",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 901.9999923706055,
+        "y": 267.9999933242798,
+        "wires": [
+            [
+                "fc9910dc.ff33",
+                "9c53256e.46bae8"
+            ]
+        ]
+    },
+    {
+        "id": "fc9910dc.ff33",
+        "type": "debug",
+        "z": "393f3a42.2de4e6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1143.9999923706055,
+        "y": 151.99998664855957,
+        "wires": []
+    },
+    {
+        "id": "9e262e49.f1fd8",
+        "type": "change",
+        "z": "393f3a42.2de4e6",
+        "name": "Temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.tempc",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 919.9999694824219,
+        "y": 337.00000381469727,
+        "wires": [
+            [
+                "47aa180e.247e38"
+            ]
+        ]
+    },
+    {
+        "id": "36dbd5b9.2ac22a",
+        "type": "change",
+        "z": "393f3a42.2de4e6",
+        "name": "Vento",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.windspeed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 944.9999923706055,
+        "y": 411.00000381469727,
+        "wires": [
+            [
+                "2ff05577.25224a"
+            ]
+        ]
+    },
+    {
+        "id": "983b032c.d0902",
+        "type": "ui_form",
+        "z": "393f3a42.2de4e6",
+        "name": "",
+        "label": "Meteo",
+        "group": "79d88409.0631cc",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Nazione",
+                "value": "country",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Città",
+                "value": "city",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "country": "",
+            "city": ""
+        },
+        "payload": "",
+        "submit": "richiedi",
+        "cancel": "cancel",
+        "topic": "",
+        "x": 179,
+        "y": 93,
+        "wires": [
+            [
+                "b2b0ea29.4fb0a8",
+                "e24ee86b.d2a248",
+                "448e4188.df109"
+            ]
+        ]
+    },
+    {
+        "id": "9c53256e.46bae8",
+        "type": "ui_text",
+        "z": "393f3a42.2de4e6",
+        "group": "79d88409.0631cc",
+        "order": 3,
+        "width": "10",
+        "height": "2",
+        "name": "",
+        "label": "Situazione",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1102,
+        "y": 274,
+        "wires": []
+    },
+    {
+        "id": "47aa180e.247e38",
+        "type": "ui_gauge",
+        "z": "393f3a42.2de4e6",
+        "name": "",
+        "group": "79d88409.0631cc",
+        "order": 2,
+        "width": "5",
+        "height": "5",
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "Gradi C°",
+        "format": "{{value}}",
+        "min": "-50",
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1104,
+        "y": 336,
+        "wires": []
+    },
+    {
+        "id": "2ff05577.25224a",
+        "type": "ui_gauge",
+        "z": "393f3a42.2de4e6",
+        "name": "VelocitaVento",
+        "group": "79d88409.0631cc",
+        "order": 3,
+        "width": "5",
+        "height": "5",
+        "gtype": "compass",
+        "title": "Velocità Vento",
+        "label": "km/sec",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "300",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1115,
+        "y": 398,
+        "wires": []
+    },
+    {
+        "id": "801f3296.50a04",
+        "type": "openweathermap",
+        "z": "393f3a42.2de4e6",
+        "name": "SituazioneMeteo",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "it",
+        "x": 696.0000076293945,
+        "y": 219.9999542236328,
+        "wires": [
+            [
+                "5661be29.19465",
+                "aa6b817f.ece4f",
+                "9e262e49.f1fd8",
+                "36dbd5b9.2ac22a"
+            ]
+        ]
+    },
+    {
+        "id": "428afc8f.eec184",
+        "type": "csv",
+        "z": "393f3a42.2de4e6",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "\"city\",\"city_ascii\",\"lat\",\"lng\",\"country\",\"iso2\",\"iso3\",\"admin_name\",\"capital\",\"population\",\"id\"",
+        "skip": "0",
+        "x": 164.5235939025879,
+        "y": 462.73113679885864,
+        "wires": [
+            [
+                "972de016.b63b2",
+                "50e94765.e9ef38"
+            ]
+        ]
+    },
+    {
+        "id": "448e4188.df109",
+        "type": "dropbox",
+        "z": "393f3a42.2de4e6",
+        "dropbox": "",
+        "filename": "NazioniCitta.csv",
+        "name": "",
+        "x": 153.36793518066406,
+        "y": 322.801908493042,
+        "wires": [
+            [
+                "428afc8f.eec184"
+            ]
+        ]
+    },
+    {
+        "id": "972de016.b63b2",
+        "type": "debug",
+        "z": "393f3a42.2de4e6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 295.36322021484375,
+        "y": 541.4198045730591,
+        "wires": []
+    },
+    {
+        "id": "50e94765.e9ef38",
+        "type": "function",
+        "z": "393f3a42.2de4e6",
+        "name": "Store CountryCity",
+        "func": "flow.set(\"ContryCity\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 311.36315155029297,
+        "y": 411.5377597808838,
+        "wires": [
+            [
+                "732e658e.718a1c"
+            ]
+        ]
+    },
+    {
+        "id": "1969fae2.c4bf95",
+        "type": "switch",
+        "z": "393f3a42.2de4e6",
+        "name": "CheckCountry",
+        "property": "ContryCity",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "Country",
+                "vt": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 355.3630905151367,
+        "y": 257.9622573852539,
+        "wires": [
+            [
+                "970814ad.392b08"
+            ],
+            [
+                "cc3c9604.d87d78"
+            ]
+        ]
+    },
+    {
+        "id": "cc3c9604.d87d78",
+        "type": "ui_toast",
+        "z": "393f3a42.2de4e6",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "Nazione non esistente",
+        "name": "Country error",
+        "x": 628.3632125854492,
+        "y": 438.6839952468872,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "732e658e.718a1c",
+        "type": "trigger",
+        "z": "393f3a42.2de4e6",
+        "op1": "TheInput",
+        "op2": "TheInput",
+        "op1type": "flow",
+        "op2type": "flow",
+        "duration": "0",
+        "extend": false,
+        "units": "hr",
+        "reset": "",
+        "bytopic": "all",
+        "name": "WaitForFile",
+        "x": 421.3726692199707,
+        "y": 481.7923755645752,
+        "wires": [
+            [
+                "1969fae2.c4bf95",
+                "e3d2f91d.900998"
+            ]
+        ]
+    },
+    {
+        "id": "44643926.b32558",
+        "type": "function",
+        "z": "393f3a42.2de4e6",
+        "name": "Store Input",
+        "func": "flow.set(\"TheInput\",msg.payload);",
+        "outputs": 0,
+        "noerr": 0,
+        "x": 608.3679504394531,
+        "y": 134.8961944580078,
+        "wires": []
+    },
+    {
+        "id": "e3d2f91d.900998",
+        "type": "debug",
+        "z": "393f3a42.2de4e6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 515.3678817749023,
+        "y": 546.4244766235352,
+        "wires": []
+    },
+    {
+        "id": "970814ad.392b08",
+        "type": "switch",
+        "z": "393f3a42.2de4e6",
+        "name": "CheckCity",
+        "property": "CountryCity",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "city",
+                "vt": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 611.3679122924805,
+        "y": 299.7547206878662,
+        "wires": [
+            [
+                "801f3296.50a04",
+                "eed025f6.465638"
+            ],
+            [
+                "fa3c7fd0.9b41c"
+            ]
+        ]
+    },
+    {
+        "id": "fa3c7fd0.9b41c",
+        "type": "ui_toast",
+        "z": "393f3a42.2de4e6",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "Città non esistente",
+        "name": "City Error",
+        "x": 645.3631973266602,
+        "y": 360.7405700683594,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eed025f6.465638",
+        "type": "debug",
+        "z": "393f3a42.2de4e6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 863.3632049560547,
+        "y": 485.72640228271484,
+        "wires": []
+    },
+    {
+        "id": "79d88409.0631cc",
+        "type": "ui_group",
+        "z": 0,
+        "name": "Meteo",
+        "tab": "1de268f4.608097",
+        "order": 1,
+        "disp": true,
+        "width": "30",
+        "collapse": false
+    },
+    {
+        "id": "1de268f4.608097",
+        "type": "ui_tab",
+        "z": 0,
+        "name": "Situazione meteo (Esercizio 2)",
+        "icon": "dashboard",
+        "order": 2
+    }
+]
