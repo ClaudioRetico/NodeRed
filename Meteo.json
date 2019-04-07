@@ -2,7 +2,7 @@
     {
         "id": "393f3a42.2de4e6",
         "type": "tab",
-        "label": "Meteo (Esercizio 2)",
+        "label": "Meteo_Advanced (Es. 2)",
         "disabled": false,
         "info": ""
     },
@@ -10,14 +10,15 @@
         "id": "b2b0ea29.4fb0a8",
         "type": "debug",
         "z": "393f3a42.2de4e6",
-        "name": "",
+        "name": "InputPayload",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
-        "x": 398,
-        "y": 75,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 350.2222137451172,
+        "y": 52.777780532836914,
         "wires": []
     },
     {
@@ -56,12 +57,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 401.9998779296875,
-        "y": 153.99999046325684,
+        "x": 383.11096572875977,
+        "y": 125.11109161376953,
         "wires": [
             [
                 "aba5e07e.46c0a",
-                "44643926.b32558"
+                "4b49f86f.1ddcb8"
             ]
         ]
     },
@@ -69,27 +70,29 @@
         "id": "aba5e07e.46c0a",
         "type": "debug",
         "z": "393f3a42.2de4e6",
-        "name": "",
+        "name": "MappedInput",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "true",
-        "x": 590.0000228881836,
-        "y": 53.00000190734863,
+        "targetType": "full",
+        "x": 569.0000228881836,
+        "y": 53.000003814697266,
         "wires": []
     },
     {
         "id": "5661be29.19465",
         "type": "debug",
         "z": "393f3a42.2de4e6",
-        "name": "",
+        "name": "Forecast",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
-        "x": 927.9999923706055,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 917.9999923706055,
         "y": 104.99999809265137,
         "wires": []
     },
@@ -112,8 +115,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 901.9999923706055,
-        "y": 267.9999933242798,
+        "x": 1018.0000305175781,
+        "y": 226.99997901916504,
         "wires": [
             [
                 "fc9910dc.ff33",
@@ -125,13 +128,14 @@
         "id": "fc9910dc.ff33",
         "type": "debug",
         "z": "393f3a42.2de4e6",
-        "name": "",
+        "name": "SampeForecastaData",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
-        "x": 1143.9999923706055,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1173.9999923706055,
         "y": 151.99998664855957,
         "wires": []
     },
@@ -154,8 +158,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 919.9999694824219,
-        "y": 337.00000381469727,
+        "x": 1022.0000305175781,
+        "y": 286.9999942779541,
         "wires": [
             [
                 "47aa180e.247e38"
@@ -181,8 +185,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 944.9999923706055,
-        "y": 411.00000381469727,
+        "x": 1020.9999923706055,
+        "y": 402.99998664855957,
         "wires": [
             [
                 "2ff05577.25224a"
@@ -195,13 +199,13 @@
         "z": "393f3a42.2de4e6",
         "name": "",
         "label": "Meteo",
-        "group": "79d88409.0631cc",
+        "group": "de37c9db.acf788",
         "order": 0,
         "width": 0,
         "height": 0,
         "options": [
             {
-                "label": "Nazione",
+                "label": "Nazione (in inglese)",
                 "value": "country",
                 "type": "text",
                 "required": true
@@ -226,8 +230,7 @@
         "wires": [
             [
                 "b2b0ea29.4fb0a8",
-                "e24ee86b.d2a248",
-                "448e4188.df109"
+                "e24ee86b.d2a248"
             ]
         ]
     },
@@ -235,7 +238,7 @@
         "id": "9c53256e.46bae8",
         "type": "ui_text",
         "z": "393f3a42.2de4e6",
-        "group": "79d88409.0631cc",
+        "group": "de37c9db.acf788",
         "order": 3,
         "width": "10",
         "height": "2",
@@ -243,8 +246,8 @@
         "label": "Situazione",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1102,
-        "y": 274,
+        "x": 1196.0000305175781,
+        "y": 269.00000190734863,
         "wires": []
     },
     {
@@ -252,7 +255,7 @@
         "type": "ui_gauge",
         "z": "393f3a42.2de4e6",
         "name": "",
-        "group": "79d88409.0631cc",
+        "group": "de37c9db.acf788",
         "order": 2,
         "width": "5",
         "height": "5",
@@ -269,8 +272,8 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 1104,
-        "y": 336,
+        "x": 1191.99995803833,
+        "y": 337.00001335144043,
         "wires": []
     },
     {
@@ -278,7 +281,7 @@
         "type": "ui_gauge",
         "z": "393f3a42.2de4e6",
         "name": "VelocitaVento",
-        "group": "79d88409.0631cc",
+        "group": "de37c9db.acf788",
         "order": 3,
         "width": "5",
         "height": "5",
@@ -295,31 +298,9 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 1115,
-        "y": 398,
+        "x": 1189.0000305175781,
+        "y": 409.9999942779541,
         "wires": []
-    },
-    {
-        "id": "801f3296.50a04",
-        "type": "openweathermap",
-        "z": "393f3a42.2de4e6",
-        "name": "SituazioneMeteo",
-        "wtype": "current",
-        "lon": "",
-        "lat": "",
-        "city": "",
-        "country": "",
-        "language": "it",
-        "x": 696.0000076293945,
-        "y": 219.9999542236328,
-        "wires": [
-            [
-                "5661be29.19465",
-                "aa6b817f.ece4f",
-                "9e262e49.f1fd8",
-                "36dbd5b9.2ac22a"
-            ]
-        ]
     },
     {
         "id": "428afc8f.eec184",
@@ -333,27 +314,12 @@
         "ret": "\\n",
         "temp": "\"city\",\"city_ascii\",\"lat\",\"lng\",\"country\",\"iso2\",\"iso3\",\"admin_name\",\"capital\",\"population\",\"id\"",
         "skip": "0",
-        "x": 164.5235939025879,
-        "y": 462.73113679885864,
+        "x": 100.52359008789062,
+        "y": 486.7311382293701,
         "wires": [
             [
                 "972de016.b63b2",
-                "50e94765.e9ef38"
-            ]
-        ]
-    },
-    {
-        "id": "448e4188.df109",
-        "type": "dropbox",
-        "z": "393f3a42.2de4e6",
-        "dropbox": "",
-        "filename": "NazioniCitta.csv",
-        "name": "",
-        "x": 153.36793518066406,
-        "y": 322.801908493042,
-        "wires": [
-            [
-                "428afc8f.eec184"
+                "901bf895.502138"
             ]
         ]
     },
@@ -361,43 +327,28 @@
         "id": "972de016.b63b2",
         "type": "debug",
         "z": "393f3a42.2de4e6",
-        "name": "",
+        "name": "ArrayFromCSV",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
-        "x": 295.36322021484375,
-        "y": 541.4198045730591,
+        "complete": "true",
+        "targetType": "full",
+        "x": 200.36316680908203,
+        "y": 593.4196310043335,
         "wires": []
-    },
-    {
-        "id": "50e94765.e9ef38",
-        "type": "function",
-        "z": "393f3a42.2de4e6",
-        "name": "Store CountryCity",
-        "func": "flow.set(\"ContryCity\",msg.payload);\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 311.36315155029297,
-        "y": 411.5377597808838,
-        "wires": [
-            [
-                "732e658e.718a1c"
-            ]
-        ]
     },
     {
         "id": "1969fae2.c4bf95",
         "type": "switch",
         "z": "393f3a42.2de4e6",
         "name": "CheckCountry",
-        "property": "ContryCity",
+        "property": "CountryCity",
         "propertyType": "flow",
         "rules": [
             {
                 "t": "cont",
-                "v": "Country",
+                "v": "location.country",
                 "vt": "msg"
             },
             {
@@ -407,8 +358,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 355.3630905151367,
-        "y": 257.9622573852539,
+        "x": 429.25188064575195,
+        "y": 302.9622859954834,
         "wires": [
             [
                 "970814ad.392b08"
@@ -437,55 +388,6 @@
         ]
     },
     {
-        "id": "732e658e.718a1c",
-        "type": "trigger",
-        "z": "393f3a42.2de4e6",
-        "op1": "TheInput",
-        "op2": "TheInput",
-        "op1type": "flow",
-        "op2type": "flow",
-        "duration": "0",
-        "extend": false,
-        "units": "hr",
-        "reset": "",
-        "bytopic": "all",
-        "name": "WaitForFile",
-        "x": 421.3726692199707,
-        "y": 481.7923755645752,
-        "wires": [
-            [
-                "1969fae2.c4bf95",
-                "e3d2f91d.900998"
-            ]
-        ]
-    },
-    {
-        "id": "44643926.b32558",
-        "type": "function",
-        "z": "393f3a42.2de4e6",
-        "name": "Store Input",
-        "func": "flow.set(\"TheInput\",msg.payload);",
-        "outputs": 0,
-        "noerr": 0,
-        "x": 608.3679504394531,
-        "y": 134.8961944580078,
-        "wires": []
-    },
-    {
-        "id": "e3d2f91d.900998",
-        "type": "debug",
-        "z": "393f3a42.2de4e6",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 515.3678817749023,
-        "y": 546.4244766235352,
-        "wires": []
-    },
-    {
         "id": "970814ad.392b08",
         "type": "switch",
         "z": "393f3a42.2de4e6",
@@ -495,7 +397,7 @@
         "rules": [
             {
                 "t": "cont",
-                "v": "city",
+                "v": "location.city",
                 "vt": "msg"
             },
             {
@@ -505,12 +407,11 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 611.3679122924805,
-        "y": 299.7547206878662,
+        "x": 609.3679294586182,
+        "y": 273.7547197341919,
         "wires": [
             [
-                "801f3296.50a04",
-                "eed025f6.465638"
+                "801f3296.50a04"
             ],
             [
                 "fa3c7fd0.9b41c"
@@ -536,36 +437,223 @@
         ]
     },
     {
-        "id": "eed025f6.465638",
+        "id": "448e4188.df109",
+        "type": "dropbox",
+        "z": "393f3a42.2de4e6",
+        "dropbox": "",
+        "filename": "NazioniCitta.csv",
+        "name": "",
+        "x": 154.14569854736328,
+        "y": 318.02413272857666,
+        "wires": [
+            [
+                "428afc8f.eec184"
+            ]
+        ]
+    },
+    {
+        "id": "801f3296.50a04",
+        "type": "openweathermap",
+        "z": "393f3a42.2de4e6",
+        "name": "SituazioneMeteo",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "it",
+        "x": 735.0000228881836,
+        "y": 214.99994468688965,
+        "wires": [
+            [
+                "5661be29.19465",
+                "aa6b817f.ece4f",
+                "9e262e49.f1fd8",
+                "36dbd5b9.2ac22a"
+            ]
+        ]
+    },
+    {
+        "id": "93886aa9.c47448",
         "type": "debug",
         "z": "393f3a42.2de4e6",
-        "name": "",
-        "active": true,
+        "name": "AFterSave",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
-        "x": 863.3632049560547,
-        "y": 485.72640228271484,
+        "complete": "true",
+        "targetType": "full",
+        "x": 829.2871780395508,
+        "y": 49.360586166381836,
         "wires": []
     },
     {
-        "id": "79d88409.0631cc",
+        "id": "fa331059.6a289",
+        "type": "debug",
+        "z": "393f3a42.2de4e6",
+        "name": "AfterFunction",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 659.3726654052734,
+        "y": 511.4196300506592,
+        "wires": []
+    },
+    {
+        "id": "4b49f86f.1ddcb8",
+        "type": "change",
+        "z": "393f3a42.2de4e6",
+        "name": "Store Input",
+        "rules": [
+            {
+                "t": "set",
+                "p": "TheInput",
+                "pt": "flow",
+                "to": "location",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 586.3679141998291,
+        "y": 129.76886749267578,
+        "wires": [
+            [
+                "93886aa9.c47448",
+                "cd09d375.ecb5e"
+            ]
+        ]
+    },
+    {
+        "id": "8aefd66d.e3c7d8",
+        "type": "change",
+        "z": "393f3a42.2de4e6",
+        "name": "StoreContryCity&ResendInput",
+        "rules": [
+            {
+                "t": "set",
+                "p": "CountryCity",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "msg",
+                "to": "TheInput",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 322.37261962890625,
+        "y": 424.7688636779785,
+        "wires": [
+            [
+                "fa331059.6a289",
+                "1969fae2.c4bf95"
+            ]
+        ]
+    },
+    {
+        "id": "901bf895.502138",
+        "type": "json",
+        "z": "393f3a42.2de4e6",
+        "name": "CSV to JSON",
+        "property": "payload",
+        "action": "str",
+        "pretty": true,
+        "x": 311.3679313659668,
+        "y": 517.9056644439697,
+        "wires": [
+            [
+                "d6b639f8.b540d8",
+                "8aefd66d.e3c7d8"
+            ]
+        ]
+    },
+    {
+        "id": "d6b639f8.b540d8",
+        "type": "debug",
+        "z": "393f3a42.2de4e6",
+        "name": "TheJSON",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 450.3726692199707,
+        "y": 593.3537216186523,
+        "wires": []
+    },
+    {
+        "id": "cd09d375.ecb5e",
+        "type": "switch",
+        "z": "393f3a42.2de4e6",
+        "name": "CheckIfAlreadyLoad",
+        "property": "CountryCity",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 148.3726348876953,
+        "y": 218.40564727783203,
+        "wires": [
+            [
+                "1969fae2.c4bf95"
+            ],
+            [
+                "448e4188.df109"
+            ]
+        ]
+    },
+    {
+        "id": "de37c9db.acf788",
         "type": "ui_group",
-        "z": 0,
-        "name": "Meteo",
-        "tab": "1de268f4.608097",
+        "z": "",
+        "name": "Meteo 1",
+        "tab": "6d979c63.f68cc4",
         "order": 1,
         "disp": true,
         "width": "30",
         "collapse": false
     },
     {
-        "id": "1de268f4.608097",
+        "id": "6d979c63.f68cc4",
         "type": "ui_tab",
-        "z": 0,
-        "name": "Situazione meteo (Esercizio 2)",
+        "z": "",
+        "name": "Situazione meteo advanced (esercizio 2)",
         "icon": "dashboard",
-        "order": 2
+        "order": 3
     }
 ]
