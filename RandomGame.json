@@ -2,44 +2,9 @@
     {
         "id": "a3316d81.0930d",
         "type": "tab",
-        "label": "Random Game",
+        "label": "Random Game (Es 1)",
         "disabled": false,
         "info": ""
-    },
-    {
-        "id": "4fff2c4b.d90134",
-        "type": "ui_form",
-        "z": "a3316d81.0930d",
-        "name": "",
-        "label": "The Random Game",
-        "group": "cce8f9.b1ccf708",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "options": [
-            {
-                "label": "La tua scelta (numero da 0 a 10)",
-                "value": "yourInput",
-                "type": "number",
-                "required": true
-            }
-        ],
-        "formValue": {
-            "yourInput": ""
-        },
-        "payload": "",
-        "submit": "Prova",
-        "cancel": "Cancella Input",
-        "topic": "",
-        "x": 184,
-        "y": 84,
-        "wires": [
-            [
-                "ff0f9443.311798",
-                "8fe5ae86.2766f",
-                "fe8346c7.932238"
-            ]
-        ]
     },
     {
         "id": "8fe5ae86.2766f",
@@ -56,24 +21,6 @@
         "wires": []
     },
     {
-        "id": "ef4d955e.70d968",
-        "type": "ui_toast",
-        "z": "a3316d81.0930d",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "",
-        "topic": "Errore:  deve essere fra 0 e 10",
-        "name": "MsgError",
-        "x": 608,
-        "y": 263,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "ff0f9443.311798",
         "type": "switch",
         "z": "a3316d81.0930d",
@@ -83,7 +30,7 @@
         "rules": [
             {
                 "t": "btwn",
-                "v": "0",
+                "v": "1",
                 "vt": "num",
                 "v2": "10",
                 "v2t": "num"
@@ -120,24 +67,6 @@
         "x": 681,
         "y": 88,
         "wires": []
-    },
-    {
-        "id": "fe8346c7.932238",
-        "type": "random",
-        "z": "a3316d81.0930d",
-        "name": "RandomGenerator",
-        "low": "1",
-        "high": "10",
-        "inte": "true",
-        "property": "payload",
-        "x": 443.5,
-        "y": 364,
-        "wires": [
-            [
-                "911cf574.7c2268",
-                "faeba4e9.4726c8"
-            ]
-        ]
     },
     {
         "id": "911cf574.7c2268",
@@ -197,18 +126,6 @@
         ]
     },
     {
-        "id": "fadb0b7a.144b08",
-        "type": "ui_audio",
-        "z": "a3316d81.0930d",
-        "name": "Dice Esatto",
-        "group": "cce8f9.b1ccf708",
-        "voice": "it-IT",
-        "always": "",
-        "x": 1071,
-        "y": 134,
-        "wires": []
-    },
-    {
         "id": "c7643025.74cbe",
         "type": "trigger",
         "z": "a3316d81.0930d",
@@ -254,34 +171,6 @@
         ]
     },
     {
-        "id": "b17cac2d.d3003",
-        "type": "ui_audio",
-        "z": "a3316d81.0930d",
-        "name": "Dice Sbaglato",
-        "group": "cce8f9.b1ccf708",
-        "voice": "it-IT",
-        "always": "",
-        "x": 1087,
-        "y": 210,
-        "wires": []
-    },
-    {
-        "id": "703de945.7cfbf8",
-        "type": "ui_toast",
-        "z": "a3316d81.0930d",
-        "position": "top right",
-        "displayTime": "3",
-        "highlight": "",
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "topic": "Risposta esatta",
-        "name": "Risposta",
-        "x": 1173,
-        "y": 272,
-        "wires": []
-    },
-    {
         "id": "cae07c46.3ebb1",
         "type": "function",
         "z": "a3316d81.0930d",
@@ -308,25 +197,137 @@
         "console": false,
         "tostatus": false,
         "complete": "payload",
+        "targetType": "msg",
         "x": 1174,
         "y": 329,
         "wires": []
     },
     {
+        "id": "4fff2c4b.d90134",
+        "type": "ui_form",
+        "z": "a3316d81.0930d",
+        "name": "",
+        "label": "The Random Game",
+        "group": "cce8f9.b1ccf708",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "La tua scelta (numero da 0 a 10)",
+                "value": "yourInput",
+                "type": "number",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "yourInput": ""
+        },
+        "payload": "",
+        "submit": "Prova",
+        "cancel": "Cancella Input",
+        "topic": "",
+        "x": 184,
+        "y": 84,
+        "wires": [
+            [
+                "ff0f9443.311798",
+                "8fe5ae86.2766f",
+                "fe8346c7.932238"
+            ]
+        ]
+    },
+    {
+        "id": "fadb0b7a.144b08",
+        "type": "ui_audio",
+        "z": "a3316d81.0930d",
+        "name": "Dice Esatto",
+        "group": "cce8f9.b1ccf708",
+        "voice": "it-IT",
+        "always": "",
+        "x": 1071,
+        "y": 134,
+        "wires": []
+    },
+    {
+        "id": "b17cac2d.d3003",
+        "type": "ui_audio",
+        "z": "a3316d81.0930d",
+        "name": "Dice Sbaglato",
+        "group": "cce8f9.b1ccf708",
+        "voice": "it-IT",
+        "always": "",
+        "x": 1087,
+        "y": 210,
+        "wires": []
+    },
+    {
+        "id": "ef4d955e.70d968",
+        "type": "ui_toast",
+        "z": "a3316d81.0930d",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "Errore:  deve essere fra 1 e 10",
+        "name": "MsgError",
+        "x": 608,
+        "y": 263,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "703de945.7cfbf8",
+        "type": "ui_toast",
+        "z": "a3316d81.0930d",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "Risposta esatta",
+        "name": "Risposta",
+        "x": 1173,
+        "y": 272,
+        "wires": []
+    },
+    {
+        "id": "fe8346c7.932238",
+        "type": "random",
+        "z": "a3316d81.0930d",
+        "name": "RandomGenerator",
+        "low": "1",
+        "high": "10",
+        "inte": "true",
+        "property": "payload",
+        "x": 443.5,
+        "y": 364,
+        "wires": [
+            [
+                "911cf574.7c2268",
+                "faeba4e9.4726c8"
+            ]
+        ]
+    },
+    {
         "id": "cce8f9.b1ccf708",
         "type": "ui_group",
-        "z": "",
+        "z": 0,
         "name": "Start",
         "tab": "670e1c0e.58a714",
         "order": 1,
         "disp": true,
-        "width": "6",
+        "width": "10",
         "collapse": false
     },
     {
         "id": "670e1c0e.58a714",
         "type": "ui_tab",
-        "z": "",
+        "z": 0,
         "name": "The Random Game (Esercizio 1)",
         "icon": "dashboard",
         "order": 1
